@@ -13,7 +13,7 @@ resource "digitalocean_droplet" "Desarrollo" {
   region    = var.region
   size      = var.recursos
   ssh_keys  = [digitalocean_ssh_key.Desarrollo.fingerprint]
-  user_data = file("config.yaml")
+  user_data = file("${path.module}/config.yaml")
 
   tags = [
     "${var.hostname}",
