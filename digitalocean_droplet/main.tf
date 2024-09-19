@@ -23,6 +23,6 @@ resource "digitalocean_droplet" "Desarrollo" {
 }
 
 resource "digitalocean_ssh_key" "Desarrollo" {
-  name       = var.hostname
+  name       = "Experimental"
   public_key = file("~/.ssh/id_rsa.pub")
 }
