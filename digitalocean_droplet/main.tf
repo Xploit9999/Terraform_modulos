@@ -1,10 +1,19 @@
+terraform {
+  required_providers {
+    digitalocean = {
+      source = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
+
 resource "digitalocean_droplet" "Desarrollo" {
   image     = var.so
   name      = var.hostname
   region    = var.region
   size      = var.recursos
   ssh_keys  = [digitalocean_ssh_key.Desarrollo.fingerprint]
-  user_data = file("digitalocean_droplet/config.yaml")
+  user_data = file("config.yaml")
 
   tags = [
     "${var.hostname}",
