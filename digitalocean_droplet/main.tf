@@ -7,12 +7,16 @@ terraform {
   }
 }
 
+data "digitalocean_ssh_key" "Desarrollo" {
+  name  = "${var.ssh_key}"
+}
+
 resource "digitalocean_droplet" "Desarrollo" {
   image     = var.so
   name      = var.hostname
   region    = var.region
   size      = var.recursos
-  ssh_keys  = [digitalocean_ssh_key.Desarrollo.fingerprint]
+  ssh_keys  = [data.digitalocean_ssh_key.Desarrollo.fingerprint]
   user_data = file("${path.module}/config.yaml")
 
   tags = [
@@ -20,9 +24,4 @@ resource "digitalocean_droplet" "Desarrollo" {
     "${var.ambiente}",
     "${var.ingeniero}"
   ]
-}
-
-resource "digitalocean_ssh_key" "Desarrollo" {
-  name       = "Experimental"
-  public_key = file("~/.ssh/id_rsa.pub")
 }
