@@ -33,3 +33,9 @@ variable "so" {
   default     = "almalinux-9-x64"
   type        = string
 }
+
+variable "ssh_key" {
+  description = "Se especifica llave existente de ssh"
+  default = "yourkey"
+  type = string
+}
