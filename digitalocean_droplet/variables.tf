@@ -36,6 +36,6 @@ variable "so" {
 
 variable "ssh_key" {
   description = "Se especifica llave existente de ssh"
-  default = "yourkey"
-  type = string
+  default     = "yourkey"
+  type        = string
 }

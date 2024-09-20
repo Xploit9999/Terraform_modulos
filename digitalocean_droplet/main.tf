@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     digitalocean = {
-      source = "digitalocean/digitalocean"
+      source  = "digitalocean/digitalocean"
       version = "~> 2.0"
     }
   }
 }
 
 data "digitalocean_ssh_key" "Desarrollo" {
-  name  = "${var.ssh_key}"
+  name = var.ssh_key
 }
 
 resource "digitalocean_droplet" "Desarrollo" {
