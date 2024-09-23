@@ -12,12 +12,16 @@ data "digitalocean_ssh_key" "Desarrollo" {
 }
 
 resource "digitalocean_droplet" "Desarrollo" {
-  image     = var.so
-  name      = var.hostname
-  region    = var.region
-  size      = var.recursos
-  ssh_keys  = [data.digitalocean_ssh_key.Desarrollo.id]
-  user_data = file("${path.module}/config.yaml")
+  image    = var.so
+  name     = var.hostname
+  region   = var.region
+  size     = var.recursos
+  ssh_keys = [data.digitalocean_ssh_key.Desarrollo.id]
+  user_data = templatefile("${path.module}/provisioning.tpl", {
+    users_info = var.usuarios
+    packages   = var.paquetes
+    update     = var.actualizar
+  })
 
   tags = [
     "${var.hostname}",

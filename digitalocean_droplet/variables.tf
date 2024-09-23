@@ -39,3 +39,34 @@ variable "ssh_key" {
   default     = "yourkey"
   type        = string
 }
+
+variable "usuarios" {
+  type = list(object({
+    nombre = string
+    desc   = string
+    grupo  = string
+    pass   = string
+    sudo   = string
+  }))
+
+  default = [{
+    nombre = "John"
+    desc   = "Ingeniero UNIX"
+    grupo  = "sysadm"
+    pass   = "$6$XGPXU9OG5aldbR6p$vAXFSTFNdM12pOGwAebcEtTgFFgWd1CnUeDCEG517hETyLSQLCGR1gE9ehfzmF3eB8ifDMqzASi6ntx13zeou0"
+    sudo   = "ALL=(ALL) PASSWD: ALL"
+
+  }]
+}
+
+variable "paquetes" {
+  type = list(any)
+
+  default = ["iotop"]
+}
+
+variable "actualizar" {
+  type = bool
+
+  default = false
+}
