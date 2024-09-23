@@ -16,9 +16,9 @@ groups:
 
 users:
 %{~ for user in users_info }
-  - name: ${user.name}
+  - name: ${user.nombre}
     gecos: ${user.desc}
-    primary_group: ${user.group}
+    primary_group: ${user.grupo}
     lock_passwd: false
     passwd: ${user.pass} 
     sudo: ${user.sudo}
