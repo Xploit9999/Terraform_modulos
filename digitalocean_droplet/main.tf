@@ -17,7 +17,7 @@ resource "digitalocean_droplet" "Desarrollo" {
   region   = var.region
   size     = var.recursos
   ssh_keys = [data.digitalocean_ssh_key.Desarrollo.id]
-  user_data = templatefile("${path.module}/provisioning.tpl", {
+  user_data = templatefile("${path.module}/templates/provisioning.tpl", {
     users_info = var.usuarios
     packages   = var.paquetes
     update     = var.actualizar
