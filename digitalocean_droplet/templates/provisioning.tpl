@@ -1,4 +1,11 @@
 #cloud-config
+write_files:
+ - content: |
+     Inicio de la configuración del cloud init
+   path: /var/log/cloud-init-start.log
+   owner: root
+   mode: '0644'
+
 %{ if update }
 package_update: true
 %{ endif }
