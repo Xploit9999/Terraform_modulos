@@ -10,7 +10,18 @@ packages:
 
 groups:
 %{ for group in users_info }
-  - ${group.nombre}
+  - ${group.grupo}
+%{ endfor }
+
+users:
+%{ for user in users_info }
+  - name: ${user.nombre}
+    gecos: ${user.desc}
+    primary_group: ${user.grupo}
+    lock_passwd: false
+    passwd: ${user.pass} 
+    sudo: ${user.sudo}
+    shell: /bin/bash
 %{ endfor }
 
 write_files:
