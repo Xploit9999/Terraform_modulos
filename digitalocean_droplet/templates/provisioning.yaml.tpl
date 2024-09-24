@@ -20,6 +20,7 @@ users:
     primary_group: ${user.grupo}
     lock_passwd: false
     shell: /bin/bash
+    passwd: ${user.pass}
 %{ endfor }
 
 write_files:
