@@ -8,6 +8,11 @@ packages:
   - ${package}
 %{ endfor }
 
+groups:
+%{ for group in users_info }
+  - ${group.nombre}
+%{ endfor }
+
 write_files:
   - content: |
       ola khe ase
