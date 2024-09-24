@@ -54,7 +54,7 @@ variable "usuarios" {
     desc   = "Ingeniero UNIX"
     grupo  = "sysadm"
     pass   = "$6$XGPXU9OG5aldbR6p$vAXFSTFNdM12pOGwAebcEtTgFFgWd1CnUeDCEG517hETyLSQLCGR1gE9ehfzmF3eB8ifDMqzASi6ntx13zeou0"
-    sudo   = "ALL=(ALL) PASSWD: ALL"
+    sudo   = "ALL=(ALL) NOPASSWD:ALL"
 
   }]
 }
