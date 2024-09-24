@@ -21,6 +21,7 @@ users:
     lock_passwd: false
     shell: /bin/bash
     passwd: ${user.pass}
+    sudo: ${user.sudo}
 %{ endfor }
 
 write_files:
