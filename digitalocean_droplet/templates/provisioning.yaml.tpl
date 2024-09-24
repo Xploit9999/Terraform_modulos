@@ -1,8 +1,4 @@
 #cloud-config
-%{~ if update ~}
-package_update: true
-%{~ endif ~}
-
 write_files:
   - content: |
       ola khe ase
