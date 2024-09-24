@@ -1,5 +1,4 @@
 #cloud-config
----
 %{ if update }
 package_update: true
 %{ endif }
