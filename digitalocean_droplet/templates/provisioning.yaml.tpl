@@ -1,5 +1,4 @@
 #cloud-config
-
 %{ if update }
 package_update: true
 %{ endif }
@@ -36,4 +35,3 @@ write_files:
       export TERM=vt100
     path: /etc/profile
     append: true
-...
