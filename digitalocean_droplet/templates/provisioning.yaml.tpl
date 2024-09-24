@@ -1,28 +1,28 @@
 #cloud-config
-%{ if update }
+%{~ if update ~}
 package_update: true
-%{ endif }
+%{~ endif ~}
 
 packages:
-%{ for package in packages }
+%{~ for package in packages ~}
   - ${package}
-%{ endfor }
+%{~ endfor ~}
 
 groups:
-%{ for group in users_info }
-  - ${group.nombre}
-%{ endfor }
+%{~ for group in users_info ~}
+  - ${group.grupo}
+%{~ endfor ~}
 
 users:
-%{ for user in users_info }
-  - name: ${user.nombre}
-    gecos: ${user.desc}
-    primary_group: ${user.grupo}
+%{~ for user in users_info ~}
+  - name: "${user.nombre}"
+    gecos: "${user.desc}"
+    primary_group: "${user.grupo}"
     lock_passwd: false
-    passwd: ${user.pass} 
-    sudo: ${user.sudo}
+    passwd: "${user.pass}"
+    sudo: "${user.sudo}"
     shell: /bin/bash
-%{ endfor }
+%{~ endfor ~}
 
 write_files:
   - content: |
