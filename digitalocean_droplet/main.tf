@@ -19,11 +19,13 @@ resource "digitalocean_droplet" "Desarrollo" {
   ssh_keys = [data.digitalocean_ssh_key.Desarrollo.id]
   vpc_uuid = var.vpc_id != "" ? var.vpc_id : null
   user_data = templatefile(
-    if var.aprovisionamiento != "" ? var.aprovisionamiento : "${path.module}/templates/provisioning.yaml.tpl", {
+    var.aprovisionamiento != "" ? var.aprovisionamiento : "${path.module}/templates/provisioning.yaml.tpl", 
+    {
     users_info = var.usuarios
     packages   = var.paquetes
     update     = var.actualizar
-  })
+    }
+  )
 
   tags = [
     "${var.hostname}",
