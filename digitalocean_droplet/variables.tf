@@ -40,6 +40,11 @@ variable "ssh_key" {
   type        = string
 }
 
+variable "vpc_id" {
+  type = string
+  default = ""
+}
+
 variable "usuarios" {
   type = list(object({
     nombre = string
