@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-resource "digitalocean_vpc" "vpn-vpc" {
+resource "digitalocean_vpc" "mi_vpc" {
   name     = var.nombre_vpc
   region   = var.region
   ip_range = var.ip_rango
