@@ -11,5 +11,5 @@ output "get_price" {
 }
 
 output "droplets_ids" {
-  value = digitalocean_droplet.Desarrollo[*].id
+  value = [for droplet in digitalocan_droplet.Desarrollo : droplet.id] 
 }
