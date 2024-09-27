@@ -9,3 +9,7 @@ output "get_name" {
 output "get_price" {
   value = digitalocean_droplet.Desarrollo.price_hourly
 }
+
+output "droplets_ids" {
+  value = digitalocean_droplet.Desarrollo[*].id
+}
