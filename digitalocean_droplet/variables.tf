@@ -64,6 +64,10 @@ variable "usuarios" {
   }]
 }
 
+variable "droplets_ids" {
+  type = list(string)
+}
+
 variable "paquetes" {
   type = list(any)
 
