@@ -11,6 +11,6 @@ output "get_price" {
 }
 
 output "droplets_ids" {
-  value = digitalocean_droplet.Desarrollo.*.id 
+  value = digitalocean_droplet.Desarrollo.*.id
 }
 

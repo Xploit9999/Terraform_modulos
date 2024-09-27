@@ -41,7 +41,7 @@ variable "ssh_key" {
 }
 
 variable "vpc_id" {
-  type = string
+  type    = string
   default = ""
 }
 
@@ -64,7 +64,10 @@ variable "usuarios" {
   }]
 }
 
-
+variable "aprovisionamiento" {
+  type    = string
+  default = "${path.module}/templates/provisioning.yaml.tpl"
+}
 variable "paquetes" {
   type = list(any)
 
