@@ -10,7 +10,7 @@ terraform {
 resource "digitalocean_firewall" "mi_firewall" {
   name = var.nombre
 
-  droplets_ids = var.droplets_ids
+  droplet_ids = var.droplets_ids
 
   dynamic "inbound_rule" {
     for_each = [for reglas in var.reglas_firewall : reglas if reglas.tipo == "inbound"]
