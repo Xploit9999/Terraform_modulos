@@ -66,6 +66,7 @@ variable "usuarios" {
 
 variable "aprovisionamiento" {
   type    = string
+  default = ""
 }
 variable "paquetes" {
   type = list(any)
