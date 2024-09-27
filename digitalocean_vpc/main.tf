@@ -11,4 +11,8 @@ resource "digitalocean_vpc" "mi-vpc" {
   name     = var.nombre_vpc
   region   = var.region
   ip_range = var.ip_rango
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
