@@ -61,7 +61,7 @@ variable "usuarios" {
     grupo  = "sysadm"
     pass   = "$6$XGPXU9OG5aldbR6p$vAXFSTFNdM12pOGwAebcEtTgFFgWd1CnUeDCEG517hETyLSQLCGR1gE9ehfzmF3eB8ifDMqzASi6ntx13zeou0"
     sudo   = "ALL=(ALL) NOPASSWD:ALL"
-
+    ssh_key = ""
   }]
 }
 
