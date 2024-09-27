@@ -66,7 +66,6 @@ variable "usuarios" {
 
 variable "aprovisionamiento" {
   type    = string
-  default = "templates/provisioning.yaml.tpl"
 }
 variable "paquetes" {
   type = list(any)
