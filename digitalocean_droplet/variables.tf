@@ -47,11 +47,12 @@ variable "vpc_id" {
 
 variable "usuarios" {
   type = list(object({
-    nombre = string
-    desc   = string
-    grupo  = string
-    pass   = string
-    sudo   = string
+    nombre  = string
+    desc    = string
+    grupo   = string
+    pass    = string
+    sudo    = string
+    ssh_key = string
   }))
 
   default = [{
