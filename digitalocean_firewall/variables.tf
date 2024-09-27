@@ -17,6 +17,6 @@ variable "reglas_firewall" {
 }
 
 variable "nombre" {
-  type  = string
-  value = "mi_firewall"
+  type    = string
+  default = "mi_firewall"
 }
