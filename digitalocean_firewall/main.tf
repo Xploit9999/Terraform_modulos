@@ -28,7 +28,7 @@ resource "digitalocean_firewall" "mi_firewall" {
     content {
       protocol         = inbound_rule.value.protocolo
       port_range       = inbound_rule.value.puertos
-      source_addresses = inbound_rule.value.origen
+      destination_addresses = inbound_rule.value.origen
     }
   }
 
