@@ -20,3 +20,7 @@ variable "nombre" {
   type    = string
   default = "mi_firewall"
 }
+
+variable "droplets_ids" {
+  type = list(string)
+}
