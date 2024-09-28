@@ -21,7 +21,7 @@ output "reglas_salida" {
     inbound = [for regla in digitalocean_firewall.mi_firewall.outbound_rule : {
       protocolo = regla.protocol
       puertos   = regla.port_range
-      origen    = regla.source_addresses
+      origen    = regla.destination_addresses
     }]
   }
 }
