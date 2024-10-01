@@ -2,6 +2,10 @@ output "nombre_firewall" {
   value = digitalocean_firewall.mi_firewall.name
 }
 
+output "firewall_id" {
+  value = digitalocean_firewall.mi_firewall.id
+}
+
 output "reglas_entrada" {
   description = "Muestra reglas de entrada generadas"
   value = {
